@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+
+body {
+    font-family: 'Convergence', sans-serif;
+    margin: 0;
+    background-color: #D5B8F1;
+}
+
+footer {
+    background-color: #B49BB8;
+    position: absolute;
+    display: flex;
+
+    width: 100%;
+    left: 0;
+    top: 100%;
+    justify-content: center;
+    color: #FFF;
+    text-shadow: 0px 2.3277px 0.775901px rgba(0, 0, 0, 0.25);
+}
+
+article {
+    position: absolute;
+    display: flex;
+    
+    left: 35%;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+p {
+    color: #FFF;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    text-shadow: -3.1036px 3.1036px 3.1036px rgba(0, 0, 0, 0.25);
+    margin: 20px;
+}
+
+.section-content {
+    width: 378px;
+    height: 525px;
+    filter: drop-shadow(-3.8795px 3.8795px 3.1036px rgba(0, 0, 0, 0.16));
+    border-radius: 38.795px;
+    background-color: #E4FFDF;
+}
+
+input {
+    position: absolute;
+    width: 314px;
+    height: 60.7px;
+    left: 25px;
+    top: 36.59px;
+    border-radius: 8px;
+}
+
+button {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 92.81px;
+    height: 48.46px;
+}
+
+.first-line {
+    display: flex;
+    width: 92px;
+    height: 48;
+    flex-direction: row;
+    
+    background: #B49BB8;
+    box-shadow: inset 0px 3.28542px 6.57084px rgba(0, 0, 0, 0.19);
+    border-radius: 18px;
+}
