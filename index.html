@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.1.0/build/pure-min.css" integrity="sha384-yHIFVG6ClnONEA5yB5DJXfW2/KC173DIQrYoZMEtBvGzmf0PKiGyNEqe9N6BNDBH" crossorigin="anonymous">
+    <script>
+        function writeNumber(elementId) {
+            let outputValueTo = document.getElementById("field1");
+
+            if (outputValueTo.value == "0" || outputValueTo.value == "Erro de Sintaxe") {
+                outputValueTo.value = elementId.textContent;
+            } else {
+                outputValueTo.value += elementId.textContent;
+            }
+        }
+
+        function cleartxt() {
+            document.getElementById("field1").value = "0";
+            document.getElementById("deci").disabled = false;
+        }
+
+        function setOperator(elementId) {
+            let outputValueTo = document.getElementById("field1");
+            if (outputValueTo.value == "0" || outputValueTo.value == "Erro de sintaxe") {
+                outputValueTo.value = "0";
+            } else {
+                outputValueTo.value += elementId.textContent;
+                document.getElementById("deci").disabled = false;
+            }
+        }
+
+        function setDecimal(elementId, status) {
+            let outputValueTo = document.getElementById("field1");
+            outputValueTo.value += elementId.textContent;
+            document.getElementById("deci").disabled = status;
+        }
+
+        function calculate() {
+            try {
+                let field1txt = document.getElementById("field1");
+                if (field1txt.value != "") {
+                    let calculateResult = eval(field1txt.value);
+                    field1txt.value = calculateResult;
+                }
+            } catch (error) {
+                field1txt.value = "Erro de Sintaxe";
+            }
+        }
+
+        function removeLastNumber() {
+
+        let field1txt = document.getElementById("field1");
+
+        if (field1txt.value.length == 1 || field1txt.value == "0" || field1txt.value == "Syntax error") {
+            field1txt.value = "0";
+            document.getElementById("deci").disabled = false;
+        } else {
+            field1txt.value = field1txt.value.substring(0, field1txt.value.length - 1);
+        }
+        }
+
+    </script>
+
+    <title>Calculadora</title>
+</head>
+<body>
+    <section class="content">
+        <article>
+        <p>CALCULADORA</p>        
+            <div class="section-content">
+                <input type="text" id="field1" readonly value="0" />
+                <br>
+                <button onclick="setOperator(this)" id="divide" class="first-line">/</button>
+                <button onclick="setOperator(this)" id="multiply" class="first-line">*</button>
+                <button onclick="setOperator(this)" id="subtract" class="first-line">-</button>
+                <br>
+                <button onclick="writeNumber(this)" id="n7">7</button>
+                <button onclick="writeNumber(this)" id="n8">8</button>
+                <button onclick="writeNumber(this)" id="n9">9</button>
+                <button onclick="setOperator(this)" id="sum">+</button>
+                <br>
+                <button onclick="writeNumber(this)" id="n4">4</button>
+                <button onclick="writeNumber(this)" id="n5">5</button>
+                <button onclick="writeNumber(this)" id="n6">6</button>
+                <button onclick="calculate()" id="result">=</button>
+                <br>
+                <button onclick="writeNumber(this)" id="n1">1</button>
+                <button onclick="writeNumber(this)" id="n2">2</button>
+                <button onclick="writeNumber(this)" id="n3">3</button>
+                <br>
+                <button onclick="writeNumber(this)" id="n0">0</button>
+                <button onclick="setDecimal(this,true)" id="deci">.</button>
+                <button onclick="removeLastNumber()" id="removeLast"><img src="assets/delete.png" alt=""></button>
+                <button onclick="cleartxt()" id="C">C</button>
+            </div>
+        </article>
+    </section>
+
+    <footer class="footer-content">
+        Feito com &lt;3 por Emilly
+    </footer>
+
+</body>
+</html>
